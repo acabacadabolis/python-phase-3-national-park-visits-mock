@@ -8,4 +8,11 @@ from classes.trip import Trip
 if __name__ == '__main__':
     print("HELLO! :) let's debug :vibing_potato:")
 
-    # ipdb.set_trace()
+    def test_name_is_string(self):
+        '''NationalPark is initialized with a name of type str'''
+        np = NationalPark("Wild West")
+        
+        np_2 = NationalPark(2)
+        
+
+    ipdb.set_trace()

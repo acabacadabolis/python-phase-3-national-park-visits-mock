@@ -16,7 +16,7 @@ class TestNationalParks:
         np = NationalPark("Wild West")
         assert (isinstance(np.name, str))
         np_2 = NationalPark(2)
-        assert (not hasattr(np_2, "_name"))
+        assert (not hasattr(np_2, "name"))
 
     def test_name_setter(self):
         '''Cannot change the name of the NationalPark'''
@@ -34,9 +34,9 @@ class TestNationalParks:
         t_3 = Trip(vis, p2, "January 5th","January 20th")
 
         assert (len(p1.trips()) == 2)
-        assert (t_1 in p1.orders())
-        assert (t_2 in p1.orders())
-        assert (not t_3 in p1.orders())
+        assert (t_1 in p1.trips())
+        assert (t_2 in p1.trips())
+        assert (not t_3 in p1.trips())
 
     def test_trips_of_type_trips(self):
         '''National Park trips are of type '''
@@ -55,8 +55,8 @@ class TestNationalParks:
 
         p1 = NationalPark('Alaska Wilds')
         
-        t_1 = Trip(vis, p1, 2)
-        t_2 = Trip(vis2, p1, 5)
+        t_1 = Trip(vis, p1, 2, 5)
+        t_2 = Trip(vis2, p1, 5, 2)
 
         assert (p1 in vis.nationalparks())
         assert (p1 in vis2.nationalparks())
